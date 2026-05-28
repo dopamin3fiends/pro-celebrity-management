@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Celebrity Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    ::selection { background: #0a0a0a; color: #fff; }
+    input, textarea, select { -webkit-appearance: none; appearance: none; border-radius: 0; }
+  </style>
+</head>
+<body class="bg-white text-[#0a0a0a] font-sans antialiased">
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────── -->
+  <header id="site-nav" class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-14 h-14 flex items-center justify-between">
+
+      <a href="#" class="text-[10px] font-semibold tracking-[.28em] uppercase text-[#0a0a0a] shrink-0">
+        Pro&nbsp;Celebrity&nbsp;<span class="text-gray-300 mx-1.5">|</span>&nbsp;Management
+      </a>
+
+      <!-- desktop links -->
+      <nav class="hidden md:flex items-center gap-10">
+        <a href="#engine"  class="text-[10px] font-medium tracking-[.22em] uppercase text-gray-400 hover:text-[#0a0a0a] transition-colors duration-200">Engine</a>
+        <a href="#focus"   class="text-[10px] font-medium tracking-[.22em] uppercase text-gray-400 hover:text-[#0a0a0a] transition-colors duration-200">Focus</a>
+        <a href="#connect" class="text-[10px] font-medium tracking-[.22em] uppercase text-gray-400 hover:text-[#0a0a0a] transition-colors duration-200">Connect</a>
+      </nav>
+
+      <!-- mobile burger -->
+      <button id="burger" aria-label="Menu" class="md:hidden flex flex-col gap-[5px] group">
+        <span id="b1" class="block w-5 h-[1.5px] bg-[#0a0a0a] transition-all duration-300"></span>
+        <span id="b2" class="block w-5 h-[1.5px] bg-[#0a0a0a] transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <!-- mobile drawer -->
+    <div id="drawer" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-6 flex flex-col gap-6">
+      <a href="#engine"  class="text-[10px] font-medium tracking-[.22em] uppercase text-gray-400 hover:text-[#0a0a0a]" onclick="closeMenu()">Engine</a>
+      <a href="#focus"   class="text-[10px] font-medium tracking-[.22em] uppercase text-gray-400 hover:text-[#0a0a0a]" onclick="closeMenu()">Focus</a>
+      <a href="#connect" class="text-[10px] font-medium tracking-[.22em] uppercase text-gray-400 hover:text-[#0a0a0a]" onclick="closeMenu()">Connect</a>
+    </div>
+  </header>
+
+  <!-- ─── HERO ───────────────────────────────────────────────── -->
+  <section class="min-h-screen bg-[#0a0a0a] text-white flex flex-col pt-14">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-14 flex flex-col flex-1 py-20 lg:py-28">
+
+      <p class="text-[10px] font-medium tracking-[.34em] uppercase text-gray-600 mb-14 lg:mb-20">
+        Established — Pro Celebrity Management
+      </p>
+
+      <h1 class="font-serif font-black leading-[.88] tracking-tight text-white mb-10
+                 text-[16vw] sm:text-[13vw] lg:text-[10vw] xl:text-[9vw]">
+        The Engine<br />
+        <em class="italic text-gray-500">Behind</em><br />
+        The&nbsp;Talent.
+      </h1>
+
+      <div class="mt-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+        <p class="text-gray-400 text-base lg:text-lg font-light leading-relaxed max-w-sm">
+          We architect the commercial layer that transforms cultural capital into durable enterprise value — for the world's most recognised talent.
+        </p>
+        <a href="#engine"
+           class="inline-flex items-center gap-3 text-[10px] font-semibold tracking-[.24em] uppercase
+                  text-white border border-white/20 px-8 py-4 w-fit
+                  hover:bg-white hover:text-[#0a0a0a] transition-all duration-300">
+          Explore Framework &nbsp;→
+        </a>
+      </div>
+    </div>
+
+    <!-- bottom tag line -->
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-14 pb-8
+                flex flex-col sm:flex-row items-start sm:items-center justify-between
+                gap-2 text-[10px] tracking-[.22em] uppercase text-gray-700">
+      <span>Sponsorship · Brand · Talent</span>
+      <span>New York · Los Angeles</span>
+    </div>
+  </section>
+
+  <!-- ─── GRID / FOCUS ──────────────────────────────────────── -->
+  <section id="focus" class="bg-white py-24 lg:py-36">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-14">
+
+      <!-- section header -->
+      <div class="flex items-center gap-6 mb-16">
+        <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-400">Focus</span>
+        <div class="h-px flex-1 bg-gray-100"></div>
+        <span class="text-[10px] text-gray-300">—&thinsp;01</span>
+      </div>
+
+      <!-- 3-column grid (gap-px trick for hairline borders) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-100">
+
+        <!-- card 1 -->
+        <article class="bg-white group">
+          <div class="aspect-[4/5] bg-[#f8f8f6] relative overflow-hidden
+                      border border-gray-100 group-hover:border-gray-300
+                      transition-colors duration-300 flex flex-col justify-between p-8 lg:p-10">
+            <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-300">01</span>
+            <div>
+              <h3 class="font-serif text-2xl lg:text-3xl font-bold text-[#0a0a0a] leading-tight mb-3">
+                Talent<br />Verticals
+              </h3>
+              <p class="text-[10px] text-gray-400 tracking-[.2em] uppercase">
+                Athletes · Entertainers · Creatives
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- card 2 (inverted) -->
+        <article class="bg-white group">
+          <div class="aspect-[4/5] bg-[#0a0a0a] relative overflow-hidden
+                      border border-[#0a0a0a] group-hover:border-gray-600
+                      transition-colors duration-300 flex flex-col justify-between p-8 lg:p-10">
+            <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-700">02</span>
+            <div>
+              <h3 class="font-serif text-2xl lg:text-3xl font-bold text-white leading-tight mb-3">
+                Brand<br />Partnerships
+              </h3>
+              <p class="text-[10px] text-gray-500 tracking-[.2em] uppercase">
+                Fortune 500 · Emerging · Strategic
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- card 3 -->
+        <article class="bg-white group">
+          <div class="aspect-[4/5] bg-[#f8f8f6] relative overflow-hidden
+                      border border-gray-100 group-hover:border-gray-300
+                      transition-colors duration-300 flex flex-col justify-between p-8 lg:p-10">
+            <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-300">03</span>
+            <div>
+              <h3 class="font-serif text-2xl lg:text-3xl font-bold text-[#0a0a0a] leading-tight mb-3">
+                Deal<br />Architecture
+              </h3>
+              <p class="text-[10px] text-gray-400 tracking-[.2em] uppercase">
+                Equity · Endorsement · Content
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ENGINE / INFO ─────────────────────────────────────── -->
+  <section id="engine" class="bg-[#f8f8f6] py-24 lg:py-40">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-14">
+
+      <!-- section header -->
+      <div class="flex items-center gap-6 mb-20">
+        <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-400">Engine</span>
+        <div class="h-px flex-1 bg-gray-200"></div>
+        <span class="text-[10px] text-gray-300">—&thinsp;02</span>
+      </div>
+
+      <!-- intro two-col -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
+        <h2 class="font-serif text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-[#0a0a0a]">
+          A Systematic Approach to Commercial Excellence.
+        </h2>
+        <div class="flex flex-col justify-center gap-5 text-gray-500 text-base leading-relaxed">
+          <p>
+            Pro Celebrity Management operates at the intersection of cultural influence and enterprise strategy. We deploy a proprietary sponsorship framework connecting elite talent with category-defining brands — engineered for maximum commercial leverage.
+          </p>
+          <p>
+            Our model is built on three interdependent pillars: talent positioning, brand alignment, and deal architecture. Each engagement is treated as a standalone enterprise — clear valuation, defined deliverables, measurable outcomes.
+          </p>
+        </div>
+      </div>
+
+      <!-- three pillars -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-200 border-t border-gray-200">
+
+        <div class="py-12 lg:pr-12">
+          <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-300 block mb-6">Pillar I</span>
+          <h3 class="font-serif text-2xl font-bold text-[#0a0a0a] mb-4">Talent Positioning</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            We audit, identify, and sharpen a talent's commercial narrative. Every public signal — social, press, appearance cadence — is calibrated to attract the highest-value brand partnerships available in the current market cycle.
+          </p>
+        </div>
+
+        <div class="py-12 lg:px-12">
+          <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-300 block mb-6">Pillar II</span>
+          <h3 class="font-serif text-2xl font-bold text-[#0a0a0a] mb-4">Brand Alignment</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            We match talent to brands with surgical precision. Audience overlap, cultural resonance, category exclusivity, and long-term equity potential are weighted and analysed before any partnership is structured or presented.
+          </p>
+        </div>
+
+        <div class="py-12 lg:pl-12">
+          <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-300 block mb-6">Pillar III</span>
+          <h3 class="font-serif text-2xl font-bold text-[#0a0a0a] mb-4">Deal Architecture</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            From initial term sheet to full execution, our team engineers agreements that balance upfront compensation with equity participation, content deliverables, and category protections — structured for sustained, compounding value.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- stats bar -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-200 border-t border-gray-200">
+        <div class="py-12 pr-8">
+          <span class="font-serif text-5xl xl:text-6xl font-black text-[#0a0a0a] block mb-2">200+</span>
+          <span class="text-[10px] text-gray-400 tracking-[.22em] uppercase">Active Talent Roster</span>
+        </div>
+        <div class="py-12 px-8">
+          <span class="font-serif text-5xl xl:text-6xl font-black text-[#0a0a0a] block mb-2">$2B+</span>
+          <span class="text-[10px] text-gray-400 tracking-[.22em] uppercase">Deals Structured</span>
+        </div>
+        <div class="py-12 px-8">
+          <span class="font-serif text-5xl xl:text-6xl font-black text-[#0a0a0a] block mb-2">80+</span>
+          <span class="text-[10px] text-gray-400 tracking-[.22em] uppercase">Brand Partners</span>
+        </div>
+        <div class="py-12 pl-8">
+          <span class="font-serif text-5xl xl:text-6xl font-black text-[#0a0a0a] block mb-2">15+</span>
+          <span class="text-[10px] text-gray-400 tracking-[.22em] uppercase">Years in Market</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CONNECT / FOOTER ──────────────────────────────────── -->
+  <section id="connect" class="bg-[#0a0a0a] text-white py-24 lg:py-36">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-14">
+
+      <!-- section header -->
+      <div class="flex items-center gap-6 mb-20">
+        <span class="text-[10px] font-medium tracking-[.3em] uppercase text-gray-600">Connect</span>
+        <div class="h-px flex-1 bg-gray-800"></div>
+        <span class="text-[10px] text-gray-700">—&thinsp;03</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+
+        <!-- left: copy + emails -->
+        <div>
+          <h2 class="font-serif text-4xl lg:text-5xl font-bold leading-[1.05] mb-6">
+            Ready to Build Something Significant?
+          </h2>
+          <p class="text-gray-500 text-base leading-relaxed mb-12 max-w-sm">
+            We work with a select number of talent and brand partners annually. If you are exploring a sponsorship structure, partnership, or representation mandate, submit an inquiry.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3">
+              <span class="w-1 h-1 rounded-full bg-gray-700 shrink-0"></span>
+              <a href="mailto:info@procelebritymanagement.com"
+                 class="text-[10px] text-gray-500 hover:text-white tracking-[.2em] uppercase transition-colors duration-200">
+                info@procelebritymanagement.com
+              </a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-1 h-1 rounded-full bg-gray-700 shrink-0"></span>
+              <a href="mailto:info@procelebritymanagement.com"
+                 class="text-[10px] text-gray-500 hover:text-white tracking-[.2em] uppercase transition-colors duration-200">
+                info@procelebritymanagement.com
+              </a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-1 h-1 rounded-full bg-gray-700 shrink-0"></span>
+              <a href="mailto:info@procelebritymanagement.com"
+                 class="text-[10px] text-gray-500 hover:text-white tracking-[.2em] uppercase transition-colors duration-200">
+                info@procelebritymanagement.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- right: intake form -->
+        <form id="inquiry-form" novalidate class="flex flex-col gap-px">
+          <div class="grid grid-cols-2 gap-px">
+            <input type="text" name="first" placeholder="First Name" required
+                   class="bg-[#111] text-white text-sm px-5 py-4 w-full placeholder-gray-600
+                          focus:bg-[#1a1a1a] focus:outline-none focus:ring-1 focus:ring-gray-700
+                          transition-colors duration-200" />
+            <input type="text" name="last" placeholder="Last Name" required
+                   class="bg-[#111] text-white text-sm px-5 py-4 w-full placeholder-gray-600
+                          focus:bg-[#1a1a1a] focus:outline-none focus:ring-1 focus:ring-gray-700
+                          transition-colors duration-200" />
+          </div>
+          <input type="email" name="email" placeholder="Email Address" required
+                 class="bg-[#111] text-white text-sm px-5 py-4 w-full placeholder-gray-600
+                        focus:bg-[#1a1a1a] focus:outline-none focus:ring-1 focus:ring-gray-700
+                        transition-colors duration-200" />
+          <input type="text" name="org" placeholder="Organisation / Brand"
+                 class="bg-[#111] text-white text-sm px-5 py-4 w-full placeholder-gray-600
+                        focus:bg-[#1a1a1a] focus:outline-none focus:ring-1 focus:ring-gray-700
+                        transition-colors duration-200" />
+          <div class="relative">
+            <select id="inquiry-type" name="type"
+                    class="bg-[#111] text-gray-500 text-sm px-5 py-4 w-full
+                           focus:bg-[#1a1a1a] focus:outline-none focus:ring-1 focus:ring-gray-700
+                           transition-colors duration-200 appearance-none cursor-pointer">
+              <option value="" disabled selected>Inquiry Type</option>
+              <option class="text-white" value="talent">Talent Representation</option>
+              <option class="text-white" value="brand">Brand Partnership</option>
+              <option class="text-white" value="sponsorship">Sponsorship Structuring</option>
+              <option class="text-white" value="other">General Inquiry</option>
+            </select>
+            <span class="absolute right-5 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none text-xs">↓</span>
+          </div>
+          <textarea name="message" rows="4" placeholder="Brief overview of your inquiry…"
+                    class="bg-[#111] text-white text-sm px-5 py-4 w-full placeholder-gray-600
+                           focus:bg-[#1a1a1a] focus:outline-none focus:ring-1 focus:ring-gray-700
+                           transition-colors duration-200 resize-none"></textarea>
+          <button type="submit"
+                  class="w-full bg-white text-[#0a0a0a] text-[10px] font-semibold tracking-[.28em] uppercase
+                         py-5 hover:bg-gray-100 active:bg-gray-200 transition-colors duration-200">
+            Submit Inquiry &nbsp;→
+          </button>
+          <p id="form-msg" class="text-[10px] text-gray-600 tracking-wide hidden pt-1">
+            Thank you — we will be in touch shortly.
+          </p>
+        </form>
+
+      </div>
+
+      <!-- bottom bar -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4
+                  mt-24 pt-8 border-t border-gray-800">
+        <span class="text-[10px] font-semibold tracking-[.28em] uppercase text-gray-600">
+          Pro Celebrity | Management
+        </span>
+        <span class="text-[10px] text-gray-700">
+          © 2026 Pro Celebrity Management. All rights reserved.
+        </span>
+        <div class="flex items-center gap-8">
+          <a href="#" class="text-[10px] text-gray-700 hover:text-gray-400 tracking-[.2em] uppercase transition-colors">Privacy</a>
+          <a href="#" class="text-[10px] text-gray-700 hover:text-gray-400 tracking-[.2em] uppercase transition-colors">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── JS ────────────────────────────────────────────────── -->
+  <script>
+    // mobile menu
+    const burger  = document.getElementById('burger');
+    const drawer  = document.getElementById('drawer');
+    const b1      = document.getElementById('b1');
+    const b2      = document.getElementById('b2');
+    let open = false;
+
+    function closeMenu() {
+      open = false;
+      drawer.classList.add('hidden');
+      burger.setAttribute('aria-expanded', 'false');
+      b1.style.transform = 'none';
+      b2.style.transform = 'none';
+    }
+
+    // Half the distance between bar centres: (gap 5px + bar height 1.5px) / 2 = 3.25px
+    const SHIFT = '3.25px';
+
+    burger.addEventListener('click', () => {
+      open = !open;
+      drawer.classList.toggle('hidden', !open);
+      burger.setAttribute('aria-expanded', open);
+      if (open) {
+        b1.style.transform = `translateY(${SHIFT}) rotate(45deg)`;
+        b2.style.transform = `translateY(-${SHIFT}) rotate(-45deg)`;
+      } else {
+        b1.style.transform = 'none';
+        b2.style.transform = 'none';
+      }
+    });
+
+    // nav shadow on scroll
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('shadow-sm', window.scrollY > 8);
+    }, { passive: true });
+
+    // select contrast: gray on placeholder, white on real selection
+    const sel = document.getElementById('inquiry-type');
+    sel.addEventListener('change', () => {
+      sel.classList.toggle('text-gray-500', !sel.value);
+      sel.classList.toggle('text-white',   !!sel.value);
+    });
+
+    // form demo submission
+    document.getElementById('inquiry-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const msg = document.getElementById('form-msg');
+      msg.classList.remove('hidden');
+      e.target.reset();
+      document.getElementById('inquiry-type').classList.replace('text-white', 'text-gray-500');
+      setTimeout(() => msg.classList.add('hidden'), 6000);
+    });
+  </script>
+
+</body>
+</html>
